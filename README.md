@@ -15,7 +15,7 @@ Features:
 * The [memory leak issue](https://github.com/ifzhang/ByteTrack/issues/276) should be resolved.
 
 
-https://github.com/Ending2015a/ByteTrack-DS6.4/assets/18180004/8e98ebf0-e9dd-4c9a-b845-810590b3f279
+#https://github.com/Ending2015a/ByteTrack-DS6.4/assets/18180004/8e98ebf0-e9dd-4c9a-b845-810590b3f279
 
 
 ## Build Instructions
