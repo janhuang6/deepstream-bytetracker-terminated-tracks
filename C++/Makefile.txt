@@ -1,0 +1,17 @@
+NVDS_VERSION?=7.1
+
+# MODIFIED: Set CUDA/DeepStream include paths for compatibility
+CFLAGS+= -fPIC -std=c++20 -DDS_VERSION=\"7.1.0\" \
+        -I /usr/local/cuda-$(CUDA_VER)/include \
+        -I ./includes \
+        -I ./gst-nvdsprocess \
+        -I ./gst-nvdsprocess/include
+
+GSTREAMER_INSTALL_DIR?=/opt/nvidia/deepstream/deepstream-$(NVDS_VERSION)/lib/gst-plugins
+LIB_INSTALL_DIR?=/opt/nvidia/deepstream/deepstream-$(NVDS_VERSION)/lib/
+
+LSLIB=-L$(LIB_INSTALL_DIR) -lnvdsgst_helper -lnvdsgst_meta -lnvds_meta \
+      -lnvbufsurface -lnvbuftransform -lnvds_nvtxhelper -ldl -lpthread \
+      -lcuda -lyaml-cpp -Wl,-rpath,$(LIB_INSTALL_DIR)
+
+OBJS=$(SRCS:.cpp=.o)
